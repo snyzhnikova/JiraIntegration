@@ -1,0 +1,35 @@
+<scenario xmlns="http://www.testlum.com/testing/model/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.testlum.com/testing/model/scenario scenario.xsd">
+
+    <overview>
+        <description>Negative UI scenario for login</description>
+        <name>Negative UI scenario for login</name>
+        <jira>https://svitlananyzhnikova.atlassian.net//browse/KAN-19</jira>
+    </overview>
+
+    <settings>
+        <tags>web</tags>
+    </settings>
+
+    <web comment="Start web script">
+        <repeat comment="Using repeat tag to perform a repetitive task"
+                variations="negativelogin.csv">
+            <click comment="Click correoElectrnicoInput" locator="login.correoElectrnicoInput"/>
+            <input comment="Type text into correoElectrnicoInput"
+                   locator="login.correoElectrnicoInput"
+                   value="{{email}}"/>
+            <input comment="Type text into contraseaInput"
+                   locator="login.contraseaInput"
+                   value="{{password}}"/>
+            <click comment="Click continuarButton" locator="login.continuarButton"/>
+            <assert comment="Verify element's attribute value">
+                <attribute comment="Verify attribute innerText of laContraseaHaExpiradoCambiarLaContraseaC"
+                           locator="login.laContraseaHaExpiradoCambiarLaContraseaC"
+                           name="innerText">
+                    <content>{{error}}</content>
+                </attribute>
+            </assert>
+        </repeat>
+    </web>
+</scenario>

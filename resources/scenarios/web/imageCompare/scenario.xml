@@ -1,0 +1,22 @@
+<scenario xmlns="http://www.testlum.com/testing/model/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.testlum.com/testing/model/scenario scenario.xsd">
+
+    <overview>
+        <description>Ui scenario for image comparison</description>
+        <name>Ui scenario for image comparison</name>
+        <jira>https://svitlananyzhnikova.atlassian.net//browse/KAN-20</jira>
+    </overview>
+
+    <settings>
+        <tags>web</tags>
+    </settings>
+
+
+    <web comment="Starting web script">
+        <image comment="Compare the login page"
+               file="test.png">
+            <fullScreen percentage="100"/>
+        </image>
+    </web>
+</scenario>
