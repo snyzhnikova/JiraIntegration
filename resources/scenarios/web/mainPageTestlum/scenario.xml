@@ -1,0 +1,30 @@
+<scenario xmlns="http://www.testlum.com/testing/model/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.testlum.com/testing/model/scenario scenario.xsd">
+
+    <overview>
+        <description>Web automation test </description>
+        <name>Positive UI scenario for the main page</name>
+        <jira>https://svitlananyzhnikova.atlassian.net//browse/KAN-25</jira>
+    </overview>
+
+    <settings onlyThis="true">
+        <tags>web</tags>
+    </settings>
+
+    <web comment="Starting web script">
+        <navigate command="to"
+                  comment="Navigate to Testlum page"
+                  path="https://testlum.com/"/>
+        <wait comment="Wait for 1 second"
+              time="2"
+              unit="seconds"/>
+        <assert comment="Verify element's attribute value">
+            <attribute comment="Verify attribute innerText of testlumPricingH3"
+                       locator="pricing.testlumPricingH3"
+                       name="innerText">
+                <content>Why Testlummm</content>
+            </attribute>
+        </assert>
+    </web>
+</scenario>
