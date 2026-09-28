@@ -8,7 +8,7 @@
         <jira>https://svitlananyzhnikova.atlassian.net//browse/KAN-25</jira>
     </overview>
 
-    <settings onlyThis="true">
+    <settings>
         <tags>web</tags>
     </settings>
 
@@ -23,7 +23,7 @@
             <attribute comment="Verify attribute innerText of testlumPricingH3"
                        locator="pricing.testlumPricingH3"
                        name="innerText">
-                <content>Why Testlummm</content>
+                <content>Why Testlumm</content>
             </attribute>
         </assert>
     </web>
